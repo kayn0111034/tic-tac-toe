@@ -28,6 +28,8 @@ public class ticTacToe implements ActionListener{
 	JButton button8= new JButton();
 	JButton button9= new JButton();
 	
+	boolean user=true;
+	
 	public ticTacToe() {
 		frame= new JFrame();
 		panel= new JPanel();
@@ -76,25 +78,61 @@ public class ticTacToe implements ActionListener{
 		// TODO Auto-generated method stub
 		//count+=1;
 		//label.setText("Number of clicks: "+count);
-		//JButton button10 = new JButton("wiee");
-		if(e.getSource()==button1)
+		//optimise this later
+		if(e.getSource()==button1 && user==true) {
 			button1.setText("X");
-		else if(e.getSource()==button2)
+			user=false;
+		}else if(e.getSource()==button1 && user==false){
+			button1.setText("O");
+			user=true;
+		}else if(e.getSource()==button2 && user==true){
 			button2.setText("X");
-		else if(e.getSource()==button3)
+			user=false;
+		}else if(e.getSource()==button2 && user==false){
+			button2.setText("O");
+			user=true;
+		}else if(e.getSource()==button3 && user==true){
 			button3.setText("X");
-		else if(e.getSource()==button4)
+			user=false;
+		}else if(e.getSource()==button3 && user==false){
+			button3.setText("O");
+			user=true;
+		}else if(e.getSource()==button4 && user==true){
 			button4.setText("X");
-		else if(e.getSource()==button5)
+			user=false;
+		}else if(e.getSource()==button4 && user==false){
+			button4.setText("O");
+			user=true;
+		}else if(e.getSource()==button5 && user==true){
 			button5.setText("X");
-		else if(e.getSource()==button6)
+			user=false;
+		}else if(e.getSource()==button5 && user==false){
+			button5.setText("O");
+			user=true;
+		}else if(e.getSource()==button6 && user==true){
 			button6.setText("X");
-		else if(e.getSource()==button7)
+			user=false;
+		}else if(e.getSource()==button6 && user==false){
+			button6.setText("O");
+			user=true;
+		}else if(e.getSource()==button7 && user==true){
 			button7.setText("X");
-		else if(e.getSource()==button8)
+			user=false;
+		}else if(e.getSource()==button7 && user==false){
+			button7.setText("O");
+			user=true;
+		}else if(e.getSource()==button8 && user==true){
 			button8.setText("X");
-		else if(e.getSource()==button9)
+			user=false;
+		}else if(e.getSource()==button8 && user==false){
+			button8.setText("O");
+			user=true;
+		}else if(e.getSource()==button9 && user==true){
 			button9.setText("X");
+			user=false;
+		}else if(e.getSource()==button9 && user==false){
+			button9.setText("O");
+			user=true;
+		}
 	}
-
 }
