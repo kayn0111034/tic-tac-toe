@@ -66,6 +66,17 @@ public class ticTacToe implements ActionListener{
 		frame.setTitle("Tic Tac Toe");
 		frame.pack();
 		frame.setVisible(true);
+		
+//		HashMap<Integer, JButton> buttonMap = new HashMap<Integer, JButton>();
+//		buttonMap.put(1, button1);
+//	    buttonMap.put(2, button2);
+//	    buttonMap.put(3, button3);
+//	    buttonMap.put(4, button4);
+//	    buttonMap.put(5, button5);
+//	    buttonMap.put(6, button6);
+//	    buttonMap.put(7, button7);
+//	    buttonMap.put(8, button8);
+//	    buttonMap.put(9, button9);
 	}
 	/* HashMap doesn't get called in other classes
 	 * 
@@ -96,10 +107,10 @@ public class ticTacToe implements ActionListener{
 		//label.setText("Number of clicks: "+count);
 		//optimise this later
 		
-		/* switch case doesnt have info from buttonMap
-		 * switch(buttonMap.getKey()) { 
+		//switch case doesnt have info from buttonMap
+		switch(buttonMap.getKey()) { 
 			case 1:
-		}*/
+		}
 		
 		
 		if(e.getSource()==button1 && user==true) {
