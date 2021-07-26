@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -66,11 +67,26 @@ public class ticTacToe implements ActionListener{
 		frame.pack();
 		frame.setVisible(true);
 	}
+	/* HashMap doesn't get called in other classes
+	 * 
+	 * public static void buttonHashMap(){
+		HashMap<Integer, JButton> buttonMap = new HashMap<Integer, JButton>();
+		buttonMap.put(1, button1);
+	    buttonMap.put(2, button2);
+	    buttonMap.put(3, button3);
+	    buttonMap.put(4, button4);
+	    buttonMap.put(5, button5);
+	    buttonMap.put(6, button6);
+	    buttonMap.put(7, button7);
+	    buttonMap.put(8, button8);
+	    buttonMap.put(9, button9);
+	    //System.out.println(buttonMap);
+	} */
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new ticTacToe();
-
+		
 	}
 
 	@Override
@@ -79,6 +95,13 @@ public class ticTacToe implements ActionListener{
 		//count+=1;
 		//label.setText("Number of clicks: "+count);
 		//optimise this later
+		
+		/* switch case doesnt have info from buttonMap
+		 * switch(buttonMap.getKey()) { 
+			case 1:
+		}*/
+		
+		
 		if(e.getSource()==button1 && user==true) {
 			button1.setText("X");
 			user=false;
