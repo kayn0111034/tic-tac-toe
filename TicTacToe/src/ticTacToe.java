@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.EnumMap;
 import java.util.HashMap;
 
 import javax.swing.BorderFactory;
@@ -15,22 +17,26 @@ import javax.swing.JPanel;
 
 public class ticTacToe implements ActionListener{
 	
+	
 	private int count=0;
 	//private JLabel label;
 	private JFrame frame;
 	private JPanel panel;
-	JButton button1= new JButton();
-	JButton button2= new JButton();
-	JButton button3= new JButton();
-	JButton button4= new JButton();
-	JButton button5= new JButton();
-	JButton button6= new JButton();
-	JButton button7= new JButton();
-	JButton button8= new JButton();
-	JButton button9= new JButton();
+	public static JButton button1= new JButton();
+	public static JButton button2= new JButton();
+	public static JButton button3= new JButton();
+	public static JButton button4= new JButton();
+	public static JButton button5= new JButton();
+	public static JButton button6= new JButton();
+	public static JButton button7= new JButton();
+	public static JButton button8= new JButton();
+	public static JButton button9= new JButton();
 	
 	boolean user=true;
-	
+	public enum buttons
+	{
+		but1,but2,but3,but4,but5,but6,but7,but8,but9;
+	}
 	public ticTacToe() {
 		frame= new JFrame();
 		panel= new JPanel();
@@ -67,39 +73,40 @@ public class ticTacToe implements ActionListener{
 		frame.pack();
 		frame.setVisible(true);
 		
-//		HashMap<Integer, JButton> buttonMap = new HashMap<Integer, JButton>();
-//		buttonMap.put(1, button1);
-//	    buttonMap.put(2, button2);
-//	    buttonMap.put(3, button3);
-//	    buttonMap.put(4, button4);
-//	    buttonMap.put(5, button5);
-//	    buttonMap.put(6, button6);
-//	    buttonMap.put(7, button7);
-//	    buttonMap.put(8, button8);
-//	    buttonMap.put(9, button9);
+		EnumMap<buttons, JButton> buttonMap = new EnumMap<buttons, JButton>(buttons.class);
+		buttonMap.put(buttons.but1, button1);
+		buttonMap.put(buttons.but2, button2);
+		buttonMap.put(buttons.but3, button3);
+		buttonMap.put(buttons.but4, button4);
+		buttonMap.put(buttons.but5, button5);
+		buttonMap.put(buttons.but6, button6);
+		buttonMap.put(buttons.but7, button7);
+		buttonMap.put(buttons.but8, button8);
+		buttonMap.put(buttons.but9, button9);
+		
+	    //HashMap<Integer,JButton> unmodifiableButtonMap = (HashMap<Integer, JButton>) Collections.unmodifiableMap(buttonMap);  
 	}
-	/* HashMap doesn't get called in other classes
-	 * 
-	 * public static void buttonHashMap(){
-		HashMap<Integer, JButton> buttonMap = new HashMap<Integer, JButton>();
-		buttonMap.put(1, button1);
-	    buttonMap.put(2, button2);
-	    buttonMap.put(3, button3);
-	    buttonMap.put(4, button4);
-	    buttonMap.put(5, button5);
-	    buttonMap.put(6, button6);
-	    buttonMap.put(7, button7);
-	    buttonMap.put(8, button8);
-	    buttonMap.put(9, button9);
+	 //HashMap doesn't get called in other classes
+	 
+//	public static void buttonhashmap(String[] args){
+//		HashMap<JButton, Integer> buttonMap = new HashMap<JButton, Integer>();
+//		buttonMap.put(button1, 1);
+//	    buttonMap.put(button2, 2);
+//	    buttonMap.put(button3, 3);
+//	    buttonMap.put(button4, 4);
+//	    buttonMap.put(button5, 5);
+//	    buttonMap.put(button6, 6);
+//	    buttonMap.put(button7, 7);
+//	    buttonMap.put(button8, 8);
+//	    buttonMap.put(button9, 9);
 	    //System.out.println(buttonMap);
-	} */
+//	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new ticTacToe();
 		
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -108,14 +115,16 @@ public class ticTacToe implements ActionListener{
 		//optimise this later
 		
 		//switch case doesnt have info from buttonMap
-		switch(buttonMap.getKey()) { 
-			case 1:
-		}
+//		switch(buttonMap.getKey()) { 
+//			case 1:
+//		}
 		
 		
 		if(e.getSource()==button1 && user==true) {
 			button1.setText("X");
 			user=false;
+//			System.out.println(buttonMap)
+			//System.out.println(buttonMap)
 		}else if(e.getSource()==button1 && user==false){
 			button1.setText("O");
 			user=true;
