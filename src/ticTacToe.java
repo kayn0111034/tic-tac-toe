@@ -73,6 +73,8 @@ public class ticTacToe implements ActionListener{
 		frame.pack();
 		frame.setVisible(true);
 		
+		
+		/* not useful for now
 		EnumMap<buttons, JButton> buttonMap = new EnumMap<buttons, JButton>(buttons.class);
 		buttonMap.put(buttons.but1, button1);
 		buttonMap.put(buttons.but2, button2);
@@ -83,6 +85,7 @@ public class ticTacToe implements ActionListener{
 		buttonMap.put(buttons.but7, button7);
 		buttonMap.put(buttons.but8, button8);
 		buttonMap.put(buttons.but9, button9);
+		*/
 		
 	    //HashMap<Integer,JButton> unmodifiableButtonMap = (HashMap<Integer, JButton>) Collections.unmodifiableMap(buttonMap);  
 	}
@@ -110,16 +113,16 @@ public class ticTacToe implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		//count+=1;
-		//label.setText("Number of clicks: "+count);
-		//optimise this later
 		
+		
+		//logic to change buttons' text depending on who clicked it
+		//optimize this later
+		
+		//attempt to optimise:
 		//switch case doesnt have info from buttonMap
 //		switch(buttonMap.getKey()) { 
 //			case 1:
 //		}
-		
-		
 		if(e.getSource()==button1 && user==true) {
 			button1.setText("X");
 			user=false;
@@ -131,9 +134,11 @@ public class ticTacToe implements ActionListener{
 		}else if(e.getSource()==button2 && user==true){
 			button2.setText("X");
 			user=false;
+			System.out.println(user);
 		}else if(e.getSource()==button2 && user==false){
 			button2.setText("O");
 			user=true;
+			System.out.println(user);
 		}else if(e.getSource()==button3 && user==true){
 			button3.setText("X");
 			user=false;
@@ -175,7 +180,64 @@ public class ticTacToe implements ActionListener{
 			user=false;
 		}else if(e.getSource()==button9 && user==false){
 			button9.setText("O");
-			user=true;
+			user=true;	
 		}
+		
+		//logic for checking who won
+		//currently hard coded but can be optimized
+		
+		//Player X Wins
+		
+		if (button1.getText().equals("X")&&(button2.getText().equals("X"))&&
+		(button3.getText().equals("X"))) { //horizontal line 1
+			System.out.println("Player X Won!");
+		}else if(button4.getText().equals("X")&&(button5.getText().equals("X"))
+		&&(button6.getText().equals("X"))){ //horizontal line 2
+			System.out.println("Player X Won!");
+		}else if(button7.getText().equals("X")&&(button8.getText().equals("X"))
+		&&(button9.getText().equals("X"))){ //horizontal line 3
+			System.out.println("Player X Won!");
+		}else if(button1.getText().equals("X")&&(button4.getText().equals("X"))
+		&&(button7.getText().equals("X"))){ //vertical line 1
+			System.out.println("Player X Won!");
+		}else if(button2.getText().equals("X")&&(button5.getText().equals("X"))
+		&&(button8.getText().equals("X"))){ //vertical line 2
+			System.out.println("Player X Won!");
+		}else if(button3.getText().equals("X")&&(button6.getText().equals("X"))
+		&&(button9.getText().equals("X"))){ //vertical line 3
+			System.out.println("Player X Won!");
+		}else if(button1.getText().equals("X")&&(button5.getText().equals("X"))
+		&&(button9.getText().equals("X"))){ //cross line 1
+			System.out.println("Player X Won!");
+		}else if(button3.getText().equals("X")&&(button5.getText().equals("X"))
+		&&(button6.getText().equals("X"))){ //cross line 2
+			System.out.println("Player X Won!");
+		}
+		//Player O Wins
+		if(button4.getText().equals("O")&&(button5.getText().equals("O"))
+		&&(button6.getText().equals("O"))){ //horizontal line 2
+			System.out.println("Player O Won!");
+		}else if(button7.getText().equals("O")&&(button8.getText().equals("O"))
+		&&(button9.getText().equals("O"))){ //horizontal line 3
+			System.out.println("Player O Won!");
+		}else if(button1.getText().equals("O")&&(button4.getText().equals("O"))
+		&&(button7.getText().equals("O"))){ //vertical line 1
+			System.out.println("Player O Won!");
+		}else if(button2.getText().equals("O")&&(button5.getText().equals("O"))
+		&&(button8.getText().equals("O"))){ //vertical line 2
+			System.out.println("Player O Won!");
+		}else if(button3.getText().equals("O")&&(button6.getText().equals("O"))
+		&&(button9.getText().equals("O"))){ //vertical line 3
+			System.out.println("Player O Won!");
+		}else if(button1.getText().equals("O")&&(button5.getText().equals("O"))
+		&&(button9.getText().equals("O"))){ //cross line 1
+			System.out.println("Player O Won!");
+		}else if(button3.getText().equals("O")&&(button5.getText().equals("O"))
+		&&(button6.getText().equals("O"))){ //cross line 2
+			System.out.println("Player O Won!");
+		}
+		
+
+		
 	}
 }
