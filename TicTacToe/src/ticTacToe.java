@@ -187,6 +187,7 @@ public class ticTacToe implements ActionListener{
 		//currently hard coded but can be optimized
 		
 		//Player X Wins
+		
 		if (button1.getText().equals("X")&&(button2.getText().equals("X"))&&
 		(button3.getText().equals("X"))) { //horizontal line 1
 			System.out.println("Player X Won!");
