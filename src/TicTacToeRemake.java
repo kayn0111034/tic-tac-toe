@@ -49,13 +49,12 @@ import javax.swing.*;
                     if(isPlayer1==true){
                         buttonList[i].setText("X");
                         isPlayer1=false;
-                        checkWin();
                     }
                     else{
                         buttonList[i].setText("O");
                         isPlayer1=true;
-                        checkWin();
                     }
+                    checkWin();
                 }
             }
         }
