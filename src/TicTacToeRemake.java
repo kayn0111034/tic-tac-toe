@@ -12,7 +12,9 @@ import javax.swing.*;
         JPanel panel = new JPanel();
         JPanel buttonPanel = new JPanel();
         JButton[] buttonList = new JButton[9];
-        boolean player1 = true;
+        boolean isPlayer1=true;
+        //player 1 = x
+        //player 2 = o
 
         TicTacToeRemake() {
 
@@ -30,6 +32,7 @@ import javax.swing.*;
             for(int i=0;i<9;i++){
                 buttonList[i]=new JButton();
                 panel.add(buttonList[i]);
+                buttonList[i].addActionListener(this);
             }
         }
         public static void main (String[]args){
@@ -39,7 +42,36 @@ import javax.swing.*;
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            for(int i=0;i<9;i++){
+                if(e.getSource()==buttonList[i]){
+                    if(isPlayer1==true){
+                        buttonList[i].setText("X");
+                        isPlayer1=false;
+                    }
+                    else{
+                        buttonList[i].setText("O");
+                        isPlayer1=true;
+                    }
+                }
+            }
         }
+
+
+        //first turn will be played by 'x' for now, will implement first turn options later
+//        public void firstTurn(){
+//
+//        }
+
+//        public void checkWin(){
+//
+//        }
+//
+//        public void xWon(int a,int b, int c){
+//
+//        }
+//
+//        public void oWon(int a,int b, int c){
+//
+//        }
     }
 
