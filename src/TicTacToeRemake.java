@@ -65,12 +65,12 @@ import javax.swing.*;
 //        public void checkWin(){
 //
 //        }
-//
-//        public void xWon(int a,int b, int c){
+        //if x wins, direct to play again page which says player x won
+//        public void xWon(){
 //
 //        }
-//
-//        public void oWon(int a,int b, int c){
+        //if o wins, direct to play again page which says player o won
+//        public void oWon(){
 //
 //        }
     }
