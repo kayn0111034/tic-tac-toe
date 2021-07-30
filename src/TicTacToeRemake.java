@@ -15,6 +15,8 @@ import javax.swing.*;
         boolean isPlayer1=true;
         //player 1 = x
         //player 2 = o
+        boolean win=false;
+        String winLine=null;
 
         TicTacToeRemake() {
 
@@ -47,10 +49,12 @@ import javax.swing.*;
                     if(isPlayer1==true){
                         buttonList[i].setText("X");
                         isPlayer1=false;
+                        checkWin();
                     }
                     else{
                         buttonList[i].setText("O");
                         isPlayer1=true;
+                        checkWin();
                     }
                 }
             }
@@ -62,9 +66,48 @@ import javax.swing.*;
 //
 //        }
 
-//        public void checkWin(){
-//
-//        }
+        public void checkWin(){
+            //check rows
+            for(int i=0;i<8;i++) {
+
+                switch (i) {
+                    case 0:
+                        winLine = buttonList[0].getText() + buttonList[1].getText() + buttonList[2].getText();
+                        break;
+                    case 1:
+                        winLine = buttonList[3].getText() + buttonList[4].getText() + buttonList[5].getText();
+                        break;
+                    case 2:
+                        winLine = buttonList[6].getText() + buttonList[7].getText() + buttonList[8].getText();
+                        break;
+                    case 3:
+                        winLine = buttonList[0].getText() + buttonList[3].getText() + buttonList[6].getText();
+                        break;
+                    case 4:
+                        winLine = buttonList[1].getText() + buttonList[4].getText() + buttonList[7].getText();
+                        break;
+                    case 5:
+                        winLine = buttonList[2].getText() + buttonList[5].getText() + buttonList[8].getText();
+                        break;
+                    case 6:
+                        winLine = buttonList[0].getText() + buttonList[4].getText() + buttonList[8].getText();
+                        break;
+                    case 7:
+                        winLine = buttonList[2].getText() + buttonList[4].getText() + buttonList[6].getText();
+                        break;
+                }
+            }
+
+            if(winLine.equals("XXX")){
+                System.out.print("Player X won!");
+            }
+            if(winLine.equals("OOO")){
+                System.out.print("Player O won!");
+            }
+
+        }
+
+
         //if x wins, direct to play again page which says player x won
 //        public void xWon(){
 //
