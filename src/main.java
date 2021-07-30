@@ -2,7 +2,7 @@
 public class main {
 
     public static void main(String[] args) {
-        ticTacToe tictactoe=new ticTacToe();
+        new TicTacToeRemake();
 
     }
 }
