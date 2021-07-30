@@ -16,7 +16,7 @@ import javax.swing.*;
         //player 1 = x
         //player 2 = o
         boolean win=false;
-        String winLine=null;
+
 
         TicTacToeRemake() {
 
@@ -67,9 +67,9 @@ import javax.swing.*;
 //        }
 
         public void checkWin(){
-            //check rows
+            //check if a player won
             for(int i=0;i<8;i++) {
-
+                String winLine=null;
                 switch (i) {
                     case 0:
                         winLine = buttonList[0].getText() + buttonList[1].getText() + buttonList[2].getText();
@@ -96,14 +96,16 @@ import javax.swing.*;
                         winLine = buttonList[2].getText() + buttonList[4].getText() + buttonList[6].getText();
                         break;
                 }
+
+                if(winLine.equals("XXX")){
+                    System.out.print("Player X won!");
+                }
+                if(winLine.equals("OOO")){
+                    System.out.print("Player O won!");
+                }
             }
 
-            if(winLine.equals("XXX")){
-                System.out.print("Player X won!");
-            }
-            if(winLine.equals("OOO")){
-                System.out.print("Player O won!");
-            }
+
 
         }
 
